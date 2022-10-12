@@ -1,0 +1,26 @@
+name: 'Branch name rules'
+description: 'Github action to enforce naming convention on branch names'
+author: 'scotttball'
+inputs:
+  regex:
+    description: 'Regex to validate the branch name'
+    default: ''
+  allowed_prefixes:
+    description: 'Comma separated list of prefix that must be used in every branch. eg: feature,hotfix,JIRA-'
+    default: ''
+  ignore:
+    description: 'Comma separated list of branch names to ignore. eg: master,develop'
+    default: 'master'
+  min_length:
+    description: 'Min length of branch name'
+    default: "1"
+  max_length:
+    description: 'Max length of branch name. -1 to ignore the rule'
+    default: "-1"
+
+runs:
+  using: 'node16'
+  main: 'index.js'
+branding:
+  icon: 'alert-triangle'
+  color: 'gray-dark'

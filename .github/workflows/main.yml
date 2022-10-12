@@ -1,0 +1,19 @@
+name: main
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Check
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@master
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - run: npm install
+      - name: Validate
+        run: node index.js
