@@ -9,7 +9,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@master
       - name: Use local my-action
-        uses: ./action.yml
+        uses: ../action.yml
         with:
           regex: '((?<!([A-Za-z]{1,10})-?)[A-Z]+-\d+)' # Regex the branch should match. This example enforces grouping
           min_length: 5 # Min length of the branch name
