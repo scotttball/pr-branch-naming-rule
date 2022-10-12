@@ -3,6 +3,15 @@ name: main
 on: [push, pull_request]
 
 jobs:
+  branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: scotttball/pr-branch-naming-rule@master
+        with:
+          regex: '((?<!([A-Za-z]{1,10})-?)[A-Z]+-\d+)' # Regex the branch should match. This example enforces grouping
+          min_length: 5 # Min length of the branch name
+          max_length: 35 # Max length of the branch name
+
   build:
     name: Check
     env:

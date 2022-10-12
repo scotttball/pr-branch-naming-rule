@@ -1,5 +1,5 @@
-name: 'Branch name rules'
-description: 'Github action to enforce naming convention on branch names'
+name: 'PR Branch Naming Rule'
+description: 'Github action to enforce naming convention on PR branch names'
 author: 'scotttball'
 inputs:
   regex:
