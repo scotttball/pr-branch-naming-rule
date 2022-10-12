@@ -6,6 +6,8 @@ jobs:
   branch-naming-rules:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repo
+        uses: actions/checkout@master
       - name: Use local my-action
         uses: ./action.yml
         with:
