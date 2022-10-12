@@ -1,6 +1,6 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const { commentPr } = require('./utils/utils.js');
+import core from '@actions/core';
+import github from '@actions/github';
+import { commentPr } from './utils/utils.js';
 
 const validEvent = ['push', 'pull_request'];
 

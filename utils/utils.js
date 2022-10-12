@@ -1,7 +1,7 @@
-const delve = require('delve')
-const { Octokit } = require('@octokit/core');
-const github = require('@actions/github');
-const core = require('@actions/core');
+import delve from 'delve';
+import github from '@actions/github';
+import core from '@actions/core';
+import { Octokit } from "@octokit/action";
 
 const auth = core.getInput('GITHUB_TOKEN');
 const { request } = new Octokit({ auth });
@@ -58,7 +58,7 @@ const commentPr = async body => {
   }
 }
 
-module.exports = {
+export {
   commentPr,
   getListOfLabels,
   doesPrHasLabels

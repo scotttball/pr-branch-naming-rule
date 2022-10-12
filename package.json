@@ -2,8 +2,13 @@
   "name": "action-branch-name",
   "version": "1.0.0",
   "description": "Github action to enforce naming convention on branch names",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^1.1.0",
+    "@actions/github": "^5.1.1",
+    "@octokit/action": "^4.0.8",
     "delve": "^0.3.2"
   }
 }
